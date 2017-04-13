@@ -54,7 +54,28 @@ _sounds = ['1853595354444153485f48495f564f',
            '1853595354564f4943453200000000',
            '1853595354564f4943453300000000',
            '1853595354564f4943453400000000']
+           
+ 
+_animalSounds = ['1853595354484f5253455748494e32', #horse
+				'185359535446585f4341545f303100', #cat
+				'185359535446585f444f475f303200', #dog
+				'185359535444494e4f534155525f33', #dinosaur
+				'185359535446585f4c494f4e5f3031', #lion
+				'185359535446585f30335f474f4154', #goat
+				'185359535443524f434f44494c4500', #crocodile
+				'1853595354454c455048414e545f30' #elephant
+				]
 
+_vehicleSounds = ['1853595354585f534952454e5f3032', #FIRESIREN
+				'1853595354545255434b484f524e00', #TRUCKHORN
+				'1853595354454e47494e455f524556', #CARENGINE
+				'18535953545449524553515545414c', #CARTIRESQUEEL
+				'185359535448454c49434f50544552', #HELICOPTER
+				'1853595354414952504f52544a4554', #HELICOPTER
+				'1853595354545547424f41545f3031', #BOAT
+				'1853595354545241494e5f57484953', #TRAIN
+				'1853595354424f545f435554455f30' #BEEPS
+				]
 
 
 class DashCommandSender(threading.Thread):
@@ -103,6 +124,9 @@ class DashCommandSender(threading.Thread):
         elif cmd == 'sound':
             if self.dash.isConnected:
                 self.dash.playSound(_sounds[random.randrange(0,35)])
+        elif cmd == 'animalsound':
+			if self.dash.isConnected:
+				self.dash.playSound(_animalSounds[random.randrange(0,7)])
         elif 'wheel' in cmd:
             if self.dash.isConnected:
                 scmd = cmd.split(',')
@@ -256,6 +280,12 @@ class DashApp:
                 return True
             elif event.keyval == 32:#space
                 self.cmd.killAll()
+                return True
+            elif event.keyval == 97:#a
+                c.acquire()
+                if not gIsBusy: self.cmd.addCommand('animalsound')
+                else: c.wait()
+                c.release()
                 return True
             elif event.keyval == 100:#d
                 gIsDisco = not gIsDisco
