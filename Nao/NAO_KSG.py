@@ -120,7 +120,7 @@ class controle(threading.Thread):
                         motionProxy.changeAngles("RElbowRoll", 3, spd)
 		    elif event.button == 4: #Button 5
 			thread.start_new_thread(LEDeyes,())
-                        anSpeakProxy.say("Wow!")
+                        speakProxy.say("Wow!")
 			print "\rWow!"
                     elif event.button == 5: #Button 6
 			thread.start_new_thread(LEDeyes,())  
@@ -142,7 +142,7 @@ class controle(threading.Thread):
 			#postureProxy.goToPosture(Posture, 1.0)
                         #print "\r" + Posture
 			thread.start_new_thread(LEDeyes,())  
-                        anSpeakProxy.say(SayInput)
+                        speakProxy.say(SayInput)
 			print "\r" + SayInput
                     elif event.button == 10: #SE button
                         postureProxy.goToPosture("StandInit", 1.0)
