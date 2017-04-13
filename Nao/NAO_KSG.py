@@ -136,7 +136,7 @@ class controle(threading.Thread):
 			print "\rMusic"
                     elif event.button == 8: #Button 9
 			thread.start_new_thread(LEDeyes,())                        
-			anSpeakProxy.say("Yay!")
+			speakProxy.say("Yay!")
 			print "\rYay!"
                     elif event.button == 9: #Button 10
 			#postureProxy.goToPosture(Posture, 1.0)
