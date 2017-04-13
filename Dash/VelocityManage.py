@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 class VelocityManage:
-    def __init__(self, vmin = -500, vmax = 500, vmed = 0, rmin = -400, rmax = 400, rmed = 0):
+    def __init__(self, vmin = -500, vmax = 350, vmed = 0, rmin = -400, rmax = 400, rmed = 0):
         self.vMin = vmin
         self.vMax = vmax
         self.vMed = vmed
