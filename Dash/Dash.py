@@ -281,16 +281,16 @@ class DashApp:
             elif event.keyval == 32:#space
                 self.cmd.killAll()
                 return True
-            elif event.keyval == 97:#a
+            elif event.keyval == 97:#pressing 'a' plays a random animal sound
                 c.acquire()
                 if not gIsBusy: self.cmd.addCommand('animalsound')
                 else: c.wait()
                 c.release()
                 return True
-            elif event.keyval == 100:#d
+            elif event.keyval == 100:#pressing 'd' makes Dash light up and turn its head
                 gIsDisco = not gIsDisco
                 return True
-            elif event.keyval == 102:#f
+            elif event.keyval == 102:#pressing 'f' plays a random sound
                 c.acquire()
                 if not gIsBusy: self.cmd.addCommand('sound')
                 else: c.wait()
