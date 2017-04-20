@@ -57,7 +57,7 @@ SOFTWARE.
 - Double press to turn off autonomous life mode
 - Weird sound? Short press to hear warning
 - Connect control pad to laptop before running script
-- Terminal: python /home/cooplab/git-codes/UD-NowNao/NAO/NAOControl.py
+- Terminal: python /home/cooplab/git-codes/UD-NowNao/NAO/NAO_KSG.py
 - Press h for help, x to exit
 
 ### Control Pad
