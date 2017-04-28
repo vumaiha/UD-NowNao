@@ -102,7 +102,7 @@ class controle(threading.Thread):
         #print "\rNumber of hats: " + str(j.get_numhats())
         
 	gHatP = "(0, 0)"
-        spd = 0.05
+        spd = 0.03
 
         while running:
             for event in pygame.event.get():
